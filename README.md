@@ -19,5 +19,4 @@ Use of source control to store code
 - React
 - Redux
 - Webpack
-- SASS
 - Flickr API
