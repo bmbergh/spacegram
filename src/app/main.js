@@ -6,9 +6,9 @@ import { Router, Route, hashHistory } from 'react-router';
 import Feed from './containers/FeedContainer';
 import {fetchAllPhotos} from './actions/FeedActions';
 
+import 'styles/main.scss';
 
 const store = configureStore();
-// store.dispatch(fetchAllPhotos());
 
 class App extends React.Component{
   render(){
@@ -24,7 +24,7 @@ class App extends React.Component{
 render(
   <Provider store={store}>
     <Router history={ hashHistory }>
-      <Route path="/" component={App}>
+      <Route path="/" component={Feed}>
         <Router path = "/feed" component={Feed} />
       </Route>
     </Router>

@@ -1,16 +1,13 @@
 import React, { Component, PropTypes } from 'react'
+// import '../../styles/main.scss';
 
 class Photo extends React.Component {
 
   render() {
-    let style = {
-      border: '1px solid #efefef'
-    }
-
     let { photo } = this.props
 
     return (
-      <div style={style}>
+      <div className="image-container">
           <img src={this.photoUrl(photo)} />
       </div>
     )

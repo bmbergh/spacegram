@@ -4,8 +4,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var WebpackDevServer = require('webpack-dev-server');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
+
   context: __dirname,
 
   entry:  [
@@ -74,7 +76,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'css!' +
           'postcss!' +
-          'css-loader?sourceMap'
+          'sass?sourceMap'
         )
       },
     ],
@@ -84,7 +86,9 @@ module.exports = {
   },
   // PostCSS plugin to parse CSS and add vendor prefixes to CSS rules
   postcss: [
-    require('autoprefixer')
+    autoprefixer({
+      browsers: ['ios >= 7']
+    })
   ],
 
   devtool: 'source-map',
@@ -101,7 +105,7 @@ module.exports = {
       // 'lib': path.resolve(__dirname, './src/app/lib'),
       // 'containers': path.resolve(__dirname, './src/app/containers'),
       'components': path.resolve(__dirname, './src/app/components'),
-      // 'styles': path.resolve(__dirname, './src/styles')
+      'styles': path.resolve(__dirname, './src/styles')
     }
   },
 }

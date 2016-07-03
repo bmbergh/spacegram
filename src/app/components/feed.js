@@ -8,7 +8,6 @@ export default class Feed extends React.Component {
 
     let {photos} = this.props;
     if(!photos) return null;
-    console.log('photos: ', photos);
 
     let photoNodes = photos.map((photo, i) => {
       return <Photo photo={photo} key={i} />
