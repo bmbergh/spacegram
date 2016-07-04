@@ -2,7 +2,7 @@
   "name": "spacegram",
   "version": "1.0.0",
   "description": " Photo viewing app for the space enthusiast",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0 --port 3000 --progress --inline --hot",
     "build": "webpack --config webpack.config.js --progress --colors",
@@ -44,6 +44,8 @@
     "webpack-hot-middleware": "2.10.0"
   },
   "dependencies": {
+    "hapi": "^13.4.2",
+    "inert": "^4.0.0",
     "react": "15.1.0",
     "react-dom": "15.1.0",
     "react-redux": "4.4.5",
@@ -52,5 +54,8 @@
     "redux": "3.5.2",
     "redux-logger": "2.6.1",
     "redux-thunk": "2.1.0"
+  },
+  "engines": {
+    "node": "5.2.0"
   }
 }

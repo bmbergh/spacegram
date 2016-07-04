@@ -1,46 +1,24 @@
-var path = require('path')
-var webpack = require('webpack')
+var webpack = require('webpack');
+var config = require('./webpack.config.js');
 
-module.exports = {
-  devtool: 'source-map',
+ config.plugins = config.plugins.concat([
+   // Spits out some stats about webpack compilation process to a file.
+   //new BundleTracker({filename: './webpack-stats-prod.json'}),
+   new webpack.DefinePlugin({
+     'process.env': {
+       'NODE_ENV': JSON.stringify('production')
+   }}),
+   new webpack.optimize.OccurenceOrderPlugin(), // Webpack will analyze and prioritize often used modules assigning them the smallest ids
+   new webpack.optimize.DedupePlugin(), // prevents the inclusion of duplicate code into your bundle and instead applies a copy of the function at runtime
+   new webpack.optimize.UglifyJsPlugin({ // UglifyJS is a JavaScript compressor/minifier
+     compressor: {
+       screw_ie8: true,
+       warnings: false,
+     },
+   }),
+ ])
+ config.module.loaders.push(
+   { test: /\.js?$/, exclude: /node_modules/, loader: 'babel' }
+ )
 
-  entry: [
-    './src/app/main'
-  ],
-
-  output: {
-    path: path.join(__dirname, '/src/public/dist'),
-    filename: "[name].bundle.js",
-    publicPath: '/public/'
-  },
-
-  plugins: [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
-    })
-  ],
-
-  module: {
-    loaders: [
-      { test: /\.js?$/,
-        loader: 'babel',
-        exclude: /node_modules/ },
-      { test: /\.scss?$/,
-        loader: 'style!css!sass',
-        include: path.join(__dirname, 'src', 'styles') },
-      { test: /\.png$/,
-        loader: 'file' },
-      { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        loader: 'file'}
-    ]
-  }
-}
+module.exports = config;

@@ -9,6 +9,7 @@ import {fetchAllPhotos} from './actions/FeedActions';
 import 'styles/main.scss';
 
 const store = configureStore();
+console.log('react file loaded');
 
 render(
   <Provider store={store}>
