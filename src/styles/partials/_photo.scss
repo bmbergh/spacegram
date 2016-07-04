@@ -1,0 +1,93 @@
+.image-container{ 
+  margin: 20px;
+  position:relative;
+  background:$white;
+  h2{
+    font-size:1.2em;
+    background:$white;
+    padding-top:10px;
+  }
+}
+
+.image{
+  width:100%;
+  height: 100%;
+  margin:0 auto;
+
+}
+ // Dislike & Like button functionality and <3 shape :) 
+
+button:active,
+button:focus,
+button.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.dislike{
+  border:none;
+  background-color: $red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: absolute;
+  top: 12px;
+  right:14px;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.dislike:before,
+.dislike:after {
+  content: "";
+  background-color: $red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.dislike:before {
+  top: -5px;
+  left: 0;
+}
+
+.dislike:after {
+  left: 5px;
+  top: 0;
+}
+
+.like{
+  border:none;
+  background-color: #ccc;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: absolute;
+  top: 12px;
+  right:14px;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.like:before,
+.like:after {
+  content: "";
+  background-color: #ccc;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.like:before {
+  top: -5px;
+  left: 0;
+}
+
+.like:after {
+  left: 5px;
+  top: 0;
+}
