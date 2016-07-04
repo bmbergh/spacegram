@@ -27,7 +27,8 @@ module.exports = {
     hot: true
   },
   output: {
-      path: path.resolve('./src/public/dist/'),
+      path: path.resolve('./src/public/dist'),
+      publicPath: 'http://localhost:3000/',
       filename: "[name].bundle.js",
   },
 
@@ -59,11 +60,12 @@ module.exports = {
       * npm install babel-core babel-loader babel-preset-es2015 babel-preset-react (shown below)
       */
       {
-      test: /\.js?$/,
-      exclude: /node_modules/,
-      loader: "babel",
-      presets: ['es2015', 'react']
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: "babel",
+        presets: ['es2015', 'react']
       },
+      {test: /\.(png|jpg|svg)$/, loader: 'url-loader?limit=8192' },
       {
         /*
          * It moves every require("style.css") in entry chunks into a separate css output file.
@@ -105,7 +107,8 @@ module.exports = {
       // 'lib': path.resolve(__dirname, './src/app/lib'),
       // 'containers': path.resolve(__dirname, './src/app/containers'),
       'components': path.resolve(__dirname, './src/app/components'),
-      'styles': path.resolve(__dirname, './src/styles')
+      'styles': path.resolve(__dirname, './src/styles'),
+      'img': path.resolve(__dirname, './src/public/img')
     }
   },
 }

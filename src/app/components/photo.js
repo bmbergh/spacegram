@@ -1,14 +1,16 @@
 import React, { Component, PropTypes } from 'react'
-// import '../../styles/main.scss';
 
 class Photo extends React.Component {
 
   render() {
-    let { photo } = this.props
+    let { photo, onLike, liked } = this.props;
+    let buttonValue = liked ? 'dislike' : 'like';
 
     return (
       <div className="image-container">
-          <img src={this.photoUrl(photo)} />
+        <h2>{photo.title}</h2>
+            <button className={buttonValue} onClick={() => onLike(photo.id)}></button>
+          <img className="image" src={this.photoUrl(photo)} />
       </div>
     )
   }
@@ -16,6 +18,7 @@ class Photo extends React.Component {
   photoUrl(photo) {
     return `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_n.jpg`
   }
+
 }
 
 Photo.propTypes = {

@@ -6,11 +6,11 @@ export default class Feed extends React.Component {
 
   render() {
 
-    let {photos} = this.props;
+    let {photos, onLike, likes} = this.props;
     if(!photos) return null;
 
     let photoNodes = photos.map((photo, i) => {
-      return <Photo photo={photo} key={i} />
+      return <Photo liked={likes[photo.id]} onLike={onLike} photo={photo} key={i} />
     });
 
     return ( 

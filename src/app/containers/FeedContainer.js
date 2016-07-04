@@ -3,15 +3,18 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Photo from '../components/photo';
 import * as feedActions from '../actions/FeedActions';
-import Feed from '../components/feed';
-import Search from '../components/search';
+import * as likeActions from '../actions/LikeActions';
 import * as searchActions from '../actions/SearchActions';
+import Feed from '../components/feed';
+import Nav from './NavContainer';
+
 
 class FeedContainer extends React.Component{
   constructor(props) {
     super(props);
 
     this.onSearchQueryChange = this.onSearchQueryChange.bind(this);
+    this.onLike = this.onLike.bind(this);
   
   }
   componentWillMount(){
@@ -20,17 +23,16 @@ class FeedContainer extends React.Component{
   }
 
   render(){
-    let {photos, search} = this.props;
-    console.log('search: ', search);
+    let {photos, search, likes} = this.props;
 
     let filterPhotos = search.query ?
       photos.filter((photo) => new RegExp(search.query, "ig").test(photo.title)) :
       photos;
 
     return(
-      <div>
-        <Search onChange={this.onSearchQueryChange} />
-        <Feed photos={filterPhotos}/>
+      <div className="container">
+      <Nav />
+        <Feed photos={filterPhotos} onLike={this.onLike} likes={likes}/>
       </div>
     )
   }
@@ -39,6 +41,12 @@ class FeedContainer extends React.Component{
     let {searchActions} = this.props;
     searchActions.queryChange(value);
   }
+
+  onLike(id){
+    console.log('id: ', id);
+    let {likeActions} = this.props;
+    likeActions.toggleLike(id);
+  }
 }
 
 
@@ -46,14 +54,16 @@ class FeedContainer extends React.Component{
 function mapStateToProps(state) {
   return {
     photos: state.feed.photos,
-    search: state.search
+    search: state.search,
+    likes: state.likes
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     feedActions: bindActionCreators(feedActions, dispatch),
-    searchActions: bindActionCreators(searchActions, dispatch)
+    searchActions: bindActionCreators(searchActions, dispatch),
+    likeActions: bindActionCreators(likeActions, dispatch)
   }
 }
 

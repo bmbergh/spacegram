@@ -1,6 +1,12 @@
 @import './variables/colors';
-@imoprt './partials/photo';
+@import './partials/feed';
+@import './partials/photo';
+@import './partials/search';
+@import './partials/nav';
 
 body{
   background: $white_back;
+  font-family: 'avenir';
+  font-size:.8em;
 }
+
