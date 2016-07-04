@@ -9,7 +9,7 @@ export default function likes(state={}, action){
 
       let newState = {}; 
 
-      if (state[action.payload]) {
+      if (state[action.payload]) { //checking to see if there is an id which will toggle 'like' else 'dislike' in state
         newState[action.payload] = false;
       } else {
         newState[action.payload] = true;      
