@@ -43,7 +43,6 @@ class FeedContainer extends React.Component{
   }
 
   onLike(id){
-    console.log('id: ', id);
     let {likeActions} = this.props;
     likeActions.toggleLike(id);
   }

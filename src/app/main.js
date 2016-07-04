@@ -10,17 +10,6 @@ import 'styles/main.scss';
 
 const store = configureStore();
 
-class App extends React.Component{
-  render(){
-    return(
-      <div>
-        <h1>Hello</h1>
-        {this.props.children}
-      </div>
-    )
-  }
-}
-
 render(
   <Provider store={store}>
     <Router history={ hashHistory }>

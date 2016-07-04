@@ -9,7 +9,6 @@ import logo from 'img/logo_name_spacegram.png';
 class NavContainer extends React.Component{
   constructor(props) {
     super(props);
-
     this.onSearchQueryChange = this.onSearchQueryChange.bind(this);
   }
 
@@ -33,8 +32,6 @@ class NavContainer extends React.Component{
     searchActions.queryChange(value);
   }
 }
-
-
 
 function mapStateToProps(state) {
   return {

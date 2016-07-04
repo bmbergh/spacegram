@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-
 class Search extends React.Component{
   render(){
     return(

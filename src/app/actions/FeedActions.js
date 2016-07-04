@@ -1,7 +1,8 @@
 import * as api from '../util/flickrApi';
 import {
   FETCH_ALL_PHOTOS_SUCCESS, 
-  FETCH_ALL_PHOTOS_ERROR } from './ActionTypes';
+  FETCH_ALL_PHOTOS_ERROR 
+} from './ActionTypes';
 
 export function fetchAllPhotos() {
   return dispatch => {
