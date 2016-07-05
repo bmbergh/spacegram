@@ -8,7 +8,8 @@
     "start-dev": "webpack-dev-server --host 0.0.0.0 --port 3000 --progress --inline --hot",
     "build": "webpack --config webpack.config.js --progress --colors",
     "build-production": "webpack --config webpack.prod.config.js --progress --colors",
-    "build-dev": "webpack -p --define process.env.NODE_ENV='\"development\"' --progress --colors"
+    "build-dev": "webpack -p --define process.env.NODE_ENV='\"development\"' --progress --colors",
+    "build-prod": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors"
   },
   "repository": {
     "type": "git",

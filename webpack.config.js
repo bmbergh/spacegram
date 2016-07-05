@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var WebpackDevServer = require('webpack-dev-server');
+// var WebpackDevServer = require('webpack-dev-server');
 var autoprefixer = require('autoprefixer');
 
 module.exports = {
@@ -11,9 +11,9 @@ module.exports = {
   context: __dirname,
 
   entry:  [
-    'webpack-dev-server/client?http://0.0.0.0:3000',
-    'webpack/hot/only-dev-server',
-    'webpack-hot-middleware/client',
+    // 'webpack-dev-server/client?http://0.0.0.0:3000',
+    // 'webpack/hot/only-dev-server',
+    // 'webpack-hot-middleware/client',
     './src/app/main' // entry point of my app
   ],
   
@@ -22,10 +22,10 @@ module.exports = {
     * To serve files from a different folder (such as the "public" folder in our sample project,
     * you need to configure a specific content base
     */
-  devServer: {
-    contentBase: "./src/app/main",
-    hot: true
-  },
+  // devServer: {
+  //   contentBase: "./src/app/main",
+  //   hot: true
+  // },
   output: {
       path: path.resolve('./src/public/dist'),
       publicPath: 'http://localhost:3000/',
@@ -44,12 +44,12 @@ module.exports = {
    new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
     }),
-   new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
+   // new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
    /*
     * Hot module replacement is a Webpack plugin that updates the component
     * in real time on the browser when you change its code
     */
-   new webpack.HotModuleReplacementPlugin(),
+   // new webpack.HotModuleReplacementPlugin(),
  ],
 
   module: {
@@ -102,7 +102,7 @@ module.exports = {
   devtool: 'source-map',
 
   resolve: {
-    modulesDirectories: ['node_modules', 'bower_components'],
+    modulesDirectories: ['node_modules'],
     extensions: ['', '.js', '.jsx'],
     /*
      * We can declare aliases in many ways so we could not rely on relative paths
@@ -110,8 +110,6 @@ module.exports = {
      */
     alias: {
       'app': path.resolve(__dirname, './src/app'),
-      // 'lib': path.resolve(__dirname, './src/app/lib'),
-      // 'containers': path.resolve(__dirname, './src/app/containers'),
       'components': path.resolve(__dirname, './src/app/components'),
       'styles': path.resolve(__dirname, './src/styles'),
       'img': path.resolve(__dirname, './src/public/img')
