@@ -3,7 +3,7 @@
 // Endpoint https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos
 // https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=API_KEY&user_id=USER_ID&format=json&nojsoncallback=1
 
-import 'whatwg-fetch';
+import 'whatwg-fetch';  //why a polyfill? well Safari doesn't yet support `fetch` that is why :p 
 
 //Ideally these keys would be in an .ENV file 
 const API_KEY = 'a5e95177da353f58113fd60296e1d250';
