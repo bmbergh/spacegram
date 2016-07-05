@@ -16,13 +16,24 @@
   }
 }
 
+@media screen and (max-width: 640px) {
+    .image-container{
+      padding-top:4%;
+      width:150%;
+      margin:0 auto;
+
+    }
+  }
+
 .image{
   width:100%;
   height: 100%;
   margin:0 auto;
 
 }
- // Dislike & Like button functionality and <3 shape :) 
+ /* 
+  * Dislike & Like button functionality and <3 shape :) 
+  */
 
 button:active,
 button:focus,

@@ -15,8 +15,8 @@
   border: none;
   padding: 10px 0;
   border-bottom: solid 1px $dark_blue; 
-  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s ease(0.65, 0.09, 0.08, 1);
+  -webkit-transition: all 0.3s ease(0.65, 0.09, 0.08, 1);
   background-position: -200px 0;
   background-size: 200px 100%;
   background-repeat: no-repeat;
@@ -38,7 +38,7 @@
 .input:focus::-webkit-input-placeholder, 
 .input:valid::-webkit-input-placeholder {
  color: $dark_blue;
- font-size: 11px;
+ font-size: 12px;
  -webkit-transform: translateY(-20px);
  transform: translateY(-20px);
  visibility: visible !important;
