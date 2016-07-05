@@ -11,7 +11,7 @@ export default function feed(state = initialState, action) {
   switch(action.type){
     case FETCH_ALL_PHOTOS_SUCCESS:
       return{
-        photos: action.payload.photos.photo
+        photos: action.payload.photos.photo // all the photos retrieved via action return the new state of the photos 
       } 
 
     case FETCH_ALL_PHOTOS_ERROR:

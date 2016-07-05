@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Search from '../components/search';
 import * as searchActions from '../actions/SearchActions';
-
 import logo from 'img/logo_name_spacegram.png';
 
 class NavContainer extends React.Component{
@@ -15,6 +14,7 @@ class NavContainer extends React.Component{
   render(){
     let {photos, search} = this.props;
 
+    //filter the photos based on queries in the title associated with each photo
     let filterPhotos = search.query ?
       photos.filter((photo) => new RegExp(search.query, "ig").test(photo.title)) :
       photos;
