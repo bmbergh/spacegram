@@ -8,6 +8,13 @@
     padding-top:10px;
   }
 }
+@media screen and (max-width: 640px) {
+  .image-container{
+    padding-top:4%;
+    width:150%;
+    margin:0 auto;  
+  }
+}
 
 .image{
   width:100%;

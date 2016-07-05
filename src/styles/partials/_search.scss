@@ -1,3 +1,7 @@
+/*
+* Inspired by Google material with added sparkle and modifications :p
+*/
+
 .input{
   width:150px;
   height:30px;
@@ -13,8 +17,6 @@
   border-bottom: solid 1px $dark_blue; 
   -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, $dark_blue 4%);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, $dark_blue 4%);
   background-position: -200px 0;
   background-size: 200px 100%;
   background-repeat: no-repeat;
@@ -33,7 +35,8 @@
  transition: all 0.3s ease-in-out;
 }
 
-.input:focus::-webkit-input-placeholder, .input:valid::-webkit-input-placeholder {
+.input:focus::-webkit-input-placeholder, 
+.input:valid::-webkit-input-placeholder {
  color: $dark_blue;
  font-size: 11px;
  -webkit-transform: translateY(-20px);
