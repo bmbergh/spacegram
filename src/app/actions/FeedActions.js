@@ -7,7 +7,6 @@ import {
 export function fetchAllPhotos() {
   return dispatch => {
     api.getFlickrImages().then((result) => {
-      console.log('Results in fetchAllPhotos: ', result);
       dispatch(fetchAllPhotosSuccess(result));
     }).catch((error) => {
       dispatch(fetchAllPhotosError(error));   
