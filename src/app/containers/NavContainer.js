@@ -14,11 +14,6 @@ class NavContainer extends React.Component{
   render(){
     let {photos, search} = this.props;
 
-    //filter the photos based on queries in the title associated with each photo
-    let filterPhotos = search.query ?
-      photos.filter((photo) => new RegExp(search.query, "ig").test(photo.title)) :
-      photos;
-
     return(
       <div className="container-nav">
         <div className="image-wrapper"><img src={logo} /></div>

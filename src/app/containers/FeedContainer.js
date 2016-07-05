@@ -24,7 +24,8 @@ class FeedContainer extends React.Component{
 
   render(){
     let {photos, search, likes} = this.props;
-
+    
+    //filter the photos based on queries in the title associated with each photo
     let filterPhotos = search.query ?
       photos.filter((photo) => new RegExp(search.query, "ig").test(photo.title)) :
       photos;
