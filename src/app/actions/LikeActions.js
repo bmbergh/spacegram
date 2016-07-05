@@ -3,7 +3,7 @@ import {
   TOGGLE_LIKES_ERROR 
 } from './ActionTypes';
 
-export function toggleLike(id){
+export function toggleLike(id){ //passing id of photo that is liked 
   return{ 
     type: TOGGLE_LIKES_SUCCESS,
     payload: id

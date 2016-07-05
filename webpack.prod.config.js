@@ -2,8 +2,7 @@ var webpack = require('webpack');
 var config = require('./webpack.config.js');
 
  config.plugins = config.plugins.concat([
-   // Spits out some stats about webpack compilation process to a file.
-   //new BundleTracker({filename: './webpack-stats-prod.json'}),
+
    new webpack.DefinePlugin({
      'process.env': {
        'NODE_ENV': JSON.stringify('production')
