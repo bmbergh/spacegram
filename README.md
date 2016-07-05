@@ -10,12 +10,12 @@ Build a flickr web-app that fetches images from Nasa's account via the Flickr AP
 
 ##Criteria
 
-Choice of design, layout and intuitiveness of interface
-Responsiveness across various form factors
-Page load times and performance
-Browser compatibility on current release, current release-1 versions of browsers
-Sorting and or filter options available to user
-Use of source control to store code
+- Choice of design, layout and intuitiveness of interface
+- Responsiveness across various form factors
+- Page load times and performance
+- Browser compatibility on current release, current release-1 versions of browsers
+- Sorting and or filter options available to user
+- Use of source control to store code
 
 ##Summary of Tech Stack
 This app was built using the latest and greatest technologies out today. I chose to build it in React becuase I know *Instagram* uses **React** which is a photo sharing app with impeccable load times. I chose to use **Redux** as my single state handler becasue of its overall clean and  effective way of handling the state of the application especially for scaling it larger. I chose *webpack* beause well, I love using it. It takes away the layer that other task runners like Gulp and Grunt add to projects. I didn't build out the server file till I needed to launch it on **Heroku** . I went with a simple **Node** server with **Hapi** because, why not? :) . I deployed it on Heroku for your viewing pleasure. 
