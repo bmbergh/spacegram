@@ -4,6 +4,7 @@
 // https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=API_KEY&user_id=USER_ID&format=json&nojsoncallback=1
 
 //Ideally these keys would be in an .ENV file 
+import 'whatwg-fetch';
 const API_KEY = 'a5e95177da353f58113fd60296e1d250';
 const USER_ID = '24662369@N07';
 const API_ENDPOINT = `https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=${API_KEY}&user_id=${USER_ID}&format=json&nojsoncallback=1`;

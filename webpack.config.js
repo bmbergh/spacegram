@@ -65,7 +65,13 @@ module.exports = {
         loader: "babel",
         presets: ['es2015', 'react']
       },
-      {test: /\.(png|jpg|svg)$/, loader: 'url-loader?limit=8192' },
+      {
+        test: /\.(png|jpg|svg)$/, loader: 'url-loader?limit=8192' 
+      },
+      {
+          test: /\.jpe?g$|\.ico$|\.gif$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+          loader: 'file-loader?name=[name].[ext]'  // <-- retain original file name
+      },
       {
         /*
          * It moves every require("style.css") in entry chunks into a separate css output file.

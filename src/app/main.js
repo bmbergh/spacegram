@@ -7,6 +7,7 @@ import Feed from './containers/FeedContainer';
 import {fetchAllPhotos} from './actions/FeedActions';
 
 import 'styles/main.scss';
+import '../public/img/favicon.ico'
 
 const store = configureStore();
 console.log('react file loaded');
