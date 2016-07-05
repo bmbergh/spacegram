@@ -110,8 +110,6 @@ module.exports = {
      */
     alias: {
       'app': path.resolve(__dirname, './src/app'),
-      // 'lib': path.resolve(__dirname, './src/app/lib'),
-      // 'containers': path.resolve(__dirname, './src/app/containers'),
       'components': path.resolve(__dirname, './src/app/components'),
       'styles': path.resolve(__dirname, './src/styles'),
       'img': path.resolve(__dirname, './src/public/img')
