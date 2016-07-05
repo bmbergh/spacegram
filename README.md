@@ -20,3 +20,5 @@ Use of source control to store code
 - Redux
 - Webpack
 - Flickr API
+- Hapi
+- Heroku
