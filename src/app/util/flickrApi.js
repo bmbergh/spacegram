@@ -12,7 +12,6 @@ const API_ENDPOINT = `https://api.flickr.com/services/rest/?method=flickr.people
 export function getFlickrImages(){
   return fetch(`${API_ENDPOINT}`)
     .then((response)=> {
-      console.log('response', response);
       return response.json()
     })
     .catch((err) =>{

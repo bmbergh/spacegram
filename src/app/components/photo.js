@@ -18,7 +18,6 @@ class Photo extends React.Component {
   photoUrl(photo) {
     return `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_n.jpg`
   }
-
 }
 
 Photo.propTypes = {
